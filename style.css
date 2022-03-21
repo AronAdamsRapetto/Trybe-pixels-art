@@ -1,13 +1,13 @@
 * {
-    padding: 0;
-    
+  padding: 0;
 }
+
 .color {
-    width: 40px;
-    height: 40px;
-    display: inline-block;
-    border: 1px solid black;
-    transition: all 0.25s ease;    
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  border: 1px solid black;
+  transition: all 0.25s ease;
 }
 
 /* .color:nth-of-type(1){
@@ -26,13 +26,10 @@
     background-color: yellow;
 } */
 
-.selected {    
-    transform: translateY(-10px);
-}
-
 .pixel {
-    width: 40px;
-    height: 40px;
-    border: 1px solid black;
-    display: inline-block;    
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+  display: inline-block;
+  background-color: white;
 }
