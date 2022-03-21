@@ -1,4 +1,5 @@
 const botaoLimpar = document.getElementById('clear-board');
+const botaoCriaBoard = document.getElementById('generate-board');
 
 function geraCor() {
   const red = Math.floor(Math.random() * 255) + 1;
@@ -43,13 +44,14 @@ function pintaPixels(event) {
   }
 }
 
-function criaPixels(linha, coluna) {
+function criaPixels(area) {
   const quadroDePixels = document.getElementById('pixel-board');
+  quadroDePixels.innerHTML = '';
   let novoPixel;
-  const larguraMaxima = (coluna + 1) * 40;
+  const larguraMaxima = (area + 1) * 40;
   quadroDePixels.style.maxWidth = `${larguraMaxima}px`;
-  for (let i = 1; i <= linha; i += 1) {
-    for (let k = 1; k <= coluna; k += 1) {
+  for (let i = 1; i <= area; i += 1) {
+    for (let k = 1; k <= area; k += 1) {
       novoPixel = document.createElement('div');
       novoPixel.classList = 'pixel';
       quadroDePixels.appendChild(novoPixel);
@@ -65,8 +67,23 @@ function limpaPixels() {
   }
 }
 
-criaPixels(5, 5);
+function validaInput() {
+  if (document.getElementById('board-size').value === '') {
+    alert('Board inválido!');
+  }
+  let areaPixels = parseInt(document.getElementById('board-size').value, 10);
+  if (areaPixels < 5) {
+    areaPixels = 5;
+  } else if (areaPixels > 50) {
+    areaPixels = 50;
+  }
+  criaPixels(areaPixels);
+}
 
 criaPaleta(4);
 
+criaPixels(5);
+
 botaoLimpar.addEventListener('click', limpaPixels);
+
+botaoCriaBoard.addEventListener('click', validaInput);
