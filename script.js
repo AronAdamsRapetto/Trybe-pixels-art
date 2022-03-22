@@ -34,13 +34,14 @@ function criaPaleta(numCores) {
 
 function pintaPixels(event) {
   const corSelecionada = document.getElementsByClassName('selected');
+  const evento = event.target;
   if (
     event.target.style.backgroundColor
     !== corSelecionada[0].style.backgroundColor
   ) {
-    event.target.style.backgroundColor = corSelecionada[0].style.backgroundColor;
+    evento.style.backgroundColor = corSelecionada[0].style.backgroundColor;
   } else {
-    event.target.style.backgroundColor = 'white';
+    evento.style.backgroundColor = 'white';
   }
 }
 
