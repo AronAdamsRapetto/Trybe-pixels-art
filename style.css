@@ -2,6 +2,14 @@
   padding: 0;
 }
 
+h1, #color-palette, #buttons {
+  text-align: center;
+}
+
+#pixel-board {
+  margin: auto;
+}
+
 .color {
   width: 40px;
   height: 40px;
