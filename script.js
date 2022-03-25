@@ -49,7 +49,7 @@ function criaPixels(area) {
   const quadroDePixels = document.getElementById('pixel-board');
   quadroDePixels.innerHTML = '';
   let novoPixel;
-  const larguraMaxima = (area + 1) * 40;
+  const larguraMaxima = ((area + 1) * 40);
   quadroDePixels.style.maxWidth = `${larguraMaxima}px`;
   for (let i = 1; i <= area; i += 1) {
     for (let k = 1; k <= area; k += 1) {
